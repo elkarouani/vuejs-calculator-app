@@ -1,7 +1,7 @@
 <template>
   <div class="Calculator">
-    <div class="display">0.054564</div>
-    <div class="btn">C</div>
+    <div class="display">{{current || '0'}}</div>
+    <div @click="clear" class="btn">C</div>
     <div class="btn">+/-</div>
     <div class="btn">%</div>
     <div class="btn operator">/</div>
@@ -25,7 +25,16 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      current: '123',
+    }
+  },
+  methods: {
+    clear() {
+      this.current = ''; 
+    }
+  }
 }
 </script>
 
