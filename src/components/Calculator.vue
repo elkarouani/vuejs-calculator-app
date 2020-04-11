@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       previous: null,
-      current: '123',
+      current: '0',
       operator: null,
       operatorClicked: false,
     }
@@ -58,7 +58,7 @@ export default {
     },
     setPrevious() {
       this.previous = this.current;
-      this.operatorClicked: true;
+      this.operatorClicked = true;
     },
     divide() {
       this.operator = (a, b) => a / b;
@@ -77,7 +77,7 @@ export default {
       this.setPrevious();
     },
     equal() {
-      this.current = `${this.operator(parseFloat(this.current), parseFloat(this.previous))}`;
+      this.current = `${this.operator(parseFloat(this.previous), parseFloat(this.current))}`;
       this.previous = null;
     }
   }
